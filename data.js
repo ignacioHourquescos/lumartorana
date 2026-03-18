@@ -92,8 +92,9 @@ const projects = [
     },
     {
         id: 'trabajos-especiales',
-        title: 'TRABAJOS A MEDIDA',
+        title: 'Trabajos a Medida',
         subtitle: 'Diseño y coordinación de producción',
+        description: 'Desarrollo de productos y merchandising a medida para distintos tipos de clientes y necesidad',
         image: 'images/banners/trabajos_a_medida.jpeg',
         detailImage: 'images/redes/tabajos_a_medida.jpeg',
         cardDetailImage: null,

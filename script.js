@@ -35,15 +35,7 @@ function renderProjects() {
                     <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
                     <p class="project-card-subtitle">${escapeHtml(project.subtitle || '')}</p>
                     ${description ? `<p class="project-card-description">${escapeHtml(truncatedDescription)}</p>` : ''}
-                    ${project.cardDetailImage ? `
-                        <img class="project-card-detail-image" src="${project.cardDetailImage}" alt="" loading="lazy">
-                    ` : ''}
                 </div>
-                ${project.mobileMockup ? `
-                    <div class="project-card-mockup" aria-hidden="true">
-                        <img src="${project.mobileMockup}" alt="" loading="lazy">
-                    </div>
-                ` : ''}
             </div>
         `;
         
