@@ -20,7 +20,7 @@ function loadProject() {
     document.getElementById('projectSubtitle').textContent = project.subtitle;
     document.getElementById('projectImage').src = project.image;
     document.getElementById('projectImage').alt = project.title;
-    document.title = `${project.title} - Ignacio Hourquescos`;
+    document.title = `${project.title} - Lucila Martorana`;
     
     // Renderizar el contenido estructurado
     renderProjectContent(project);
@@ -427,6 +427,32 @@ function renderProjectContent(project) {
             html += `
                 <div class="content-section" style="margin-top: var(--spacing-xl);">
                     <a href="${project.visitUrl}" target="_blank" rel="noopener noreferrer" class="visit-button">Visitar ⇨</a>
+                </div>
+            `;
+        }
+
+        // Links de referencia
+        if (project.referenceLinks && project.referenceLinks.length > 0) {
+            const normalizeLink = (link) => {
+                if (typeof link === 'string') return { label: link, url: link };
+                return {
+                    label: link.label || link.url,
+                    url: link.url,
+                };
+            };
+
+            html += `
+                <div class="content-section" style="margin-top: var(--spacing-lg);">
+                    <h2 class="section-title">Links de referencia</h2>
+                    <div class="reference-links">
+                        ${project.referenceLinks.map((link) => {
+                            const item = normalizeLink(link);
+                            const label = item.label || item.url;
+                            return `
+                                <a class="reference-link" href="${item.url}" target="_blank" rel="noopener noreferrer">${label}</a>
+                            `;
+                        }).join('')}
+                    </div>
                 </div>
             `;
         }
