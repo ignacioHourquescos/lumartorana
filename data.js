@@ -1,6 +1,7 @@
 // Datos de los proyectos - Portfolio de Lucila Martorana
 // Nota: `image` se usa como imagen principal de la tarjeta y del header del detalle.
 // `detailImage` se inserta dentro de la "historia" del detalle (viene de `images/redes/`).
+// `mobileMockup` se muestra (solo en mobile) integrado dentro de la tarjeta.
 const projects = [
     {
         id: 'pancha',
@@ -8,6 +9,7 @@ const projects = [
         subtitle: 'Desarrollo y gestión integral de marca digital (+285K comunidad)',
         image: 'images/banners/pancha.jpeg',
         detailImage: 'images/redes/pancha.jpeg',
+        mobileMockup: 'images/redes/pancha.jpeg',
         objective: 'Acompañar el crecimiento de una marca de indumentaria infantil en todas sus capas: producto, comunicación, e‑commerce y comunidad.',
         segment: 'Marca de indumentaria infantil con foco en diseño, contenido y venta online.',
         role: 'Brand & Social Media Manager (11 años)',
@@ -22,6 +24,7 @@ const projects = [
         subtitle: 'Gestión integral de redes, e‑commerce y pauta digital',
         image: 'images/banners/amabilia.jpeg',
         detailImage: 'images/redes/amabilia.jpeg',
+        mobileMockup: 'images/redes/amabilia.jpeg',
         objective: 'Ordenar y potenciar la presencia digital de una marca infantil con foco en venta online.',
         segment: 'Marca de productos infantiles con presencia digital activa.',
         role: 'Social Media & E‑commerce Manager',
@@ -36,7 +39,8 @@ const projects = [
         title: "Broom's",
         subtitle: 'Desarrollo de estrategia digital para marca retail',
         image: 'images/banners/brooms.jpeg',
-        detailImage: 'images/banners/brooms.jpeg',
+        detailImage: 'images/redes/brooms.jpeg',
+        mobileMockup: 'images/redes/brooms.jpeg',
         objective: 'Construir y ordenar la presencia digital de una marca con fuerte base retail para iniciar el desarrollo de su canal online.',
         segment: 'Marca retail con 4 locales a la calle.',
         role: 'Community Manager & Meta Ads',
@@ -52,6 +56,7 @@ const projects = [
         subtitle: 'Branding, e‑commerce y comunicación digital desde cero (2023)',
         image: 'images/banners/soloe_osuna.jpeg',
         detailImage: 'images/redes/sole_osuna.jpeg',
+        mobileMockup: 'images/redes/sole_osuna.jpeg',
         objective: 'Construir desde cero la presencia digital de una marca de ropa artesanal tejida a mano, para comunicar su propuesta de valor y comenzar a vender online.',
         segment: 'Marca de ropa artesanal, piezas únicas y de producción limitada.',
         role: 'Desarrollo integral de e‑commerce, branding y comunicación digital.',
@@ -66,7 +71,8 @@ const projects = [
         title: 'Fun Home (obra de teatro)',
         subtitle: 'Desarrollo de merchandising',
         image: 'images/banners/fun_home.jpeg',
-        detailImage: 'images/redes/amabilia.jpeg',
+        detailImage: null,
+        mobileMockup: null,
         objective: 'Crear una línea de merchandising alineada con la identidad de la obra y su audiencia.',
         segment: 'Producción teatral con público definido.',
         role: 'Desarrollo integral de merchandising',
@@ -77,7 +83,8 @@ const projects = [
         title: 'Wind Experience / Puerto Tablas',
         subtitle: 'Coordinación de eventos y viajes',
         image: 'images/banners/wind_experience.jpeg',
-        detailImage: 'images/redes/brooms.jpeg',
+        detailImage: null,
+        mobileMockup: null,
         objective: 'Organizar experiencias y viajes alrededor de una comunidad vinculada a deportes acuáticos.',
         segment: 'Escuela de windsurf y kitesurf con fuerte comunidad local.',
         role: 'Coordinación de eventos y viajes',
@@ -85,14 +92,27 @@ const projects = [
     },
     {
         id: 'trabajos-especiales',
-        title: 'Trabajos especiales',
-        subtitle: 'Proyectos puntuales de producto y merch',
-        image: 'images/banners/pancha.jpeg',
-        detailImage: 'images/redes/sole_osuna.jpeg',
-        objective: 'Desarrollar piezas puntuales de producto y merchandising para diferentes marcas y contextos.',
-        segment: 'Proyectos especiales',
-        role: 'Diseño y coordinación de producción',
-        about: 'Desarrollo de propuestas para remeras de egresados, disfraces escolares, merchandising para empresas (como Mudafy y Bolita) y diseño de etiquetas escolares. En cada caso se trabajó sobre la identidad de la marca o institución, definiendo piezas, diseño, proveedores y producción final.'
+        title: 'TRABAJOS A MEDIDA',
+        subtitle: 'Diseño y coordinación de producción',
+        image: 'images/banners/trabajos_a_medida.jpeg',
+        detailImage: 'images/redes/tabajos_a_medida.jpeg',
+        cardDetailImage: null,
+        mobileMockup: null,
+        proyectoText: 'Desarrollo de productos y merchandising a medida para distintos tipos de clientes y necesidades.',
+        contextoText: 'Proyectos personalizados que requerían una solución integral, combinando diseño, funcionalidad y viabilidad productiva.',
+        queHice: [
+            'Diseño y desarrollo de productos',
+            'Adaptación gráfica aplicada a piezas físicas',
+            'Coordinación de producción y proveedores',
+            'Gestión integral de cada proyecto'
+        ],
+        collageText: '',
+        tiposDesarrollos: [
+            'Gráfica y papelería',
+            'Indumentaria y textiles',
+            'Merchandising de marca',
+            'Productos Personalizados'
+        ]
     }
 ];
 

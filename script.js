@@ -28,12 +28,22 @@ function renderProjects() {
         
         card.innerHTML = `
             <div class="project-card-image">
-                <img src="${project.image}" alt="${escapeHtml(project.title)}" loading="lazy">
+                ${project.image ? `<img src="${project.image}" alt="${escapeHtml(project.title)}" loading="lazy">` : ''}
             </div>
             <div class="project-card-content">
-                <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
-                <p class="project-card-subtitle">${escapeHtml(project.subtitle || '')}</p>
-                ${description ? `<p class="project-card-description">${escapeHtml(truncatedDescription)}</p>` : ''}
+                <div class="project-card-text">
+                    <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
+                    <p class="project-card-subtitle">${escapeHtml(project.subtitle || '')}</p>
+                    ${description ? `<p class="project-card-description">${escapeHtml(truncatedDescription)}</p>` : ''}
+                    ${project.cardDetailImage ? `
+                        <img class="project-card-detail-image" src="${project.cardDetailImage}" alt="" loading="lazy">
+                    ` : ''}
+                </div>
+                ${project.mobileMockup ? `
+                    <div class="project-card-mockup" aria-hidden="true">
+                        <img src="${project.mobileMockup}" alt="" loading="lazy">
+                    </div>
+                ` : ''}
             </div>
         `;
         
@@ -46,7 +56,7 @@ function initRotatingWord() {
     const rotatingWord = document.getElementById('rotatingWord');
     if (!rotatingWord) return;
     
-    const phrases = ['redes sociales', 'Reels UGC', 'Meta ads', 'Email marketing', 'tienda nube'];
+    const phrases = ['redes sociales', 'Reels UGC', 'Meta ads', 'Email marketing', 'Tienda Nube', 'Diseño'];
     let currentIndex = 0;
     
     function rotateWord() {
@@ -56,12 +66,12 @@ function initRotatingWord() {
             currentIndex = (currentIndex + 1) % phrases.length;
             rotatingWord.textContent = phrases[currentIndex];
             rotatingWord.style.opacity = '1';
-        }, 300);
+        }, 220);
     }
     
-    // Mostrar "redes sociales" al cargar; rotar cada 2 segundos
+    // Mostrar "redes sociales" al cargar; rotar más rápido al inicio
     rotatingWord.textContent = phrases[0];
-    setInterval(rotateWord, 2000);
+    setInterval(rotateWord, 1400);
 }
 
 // Inicializar cuando el DOM esté listo

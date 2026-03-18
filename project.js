@@ -29,6 +29,57 @@ function loadProject() {
 // Renderizar el contenido del proyecto
 function renderProjectContent(project) {
     const contentDiv = document.getElementById('projectContent');
+
+    // Detalle custom para "Trabajos a medida"
+    if (project.id === 'trabajos-especiales') {
+        const escapeHtml = (text) => {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        };
+
+        const proyectoText = project.proyectoText || '';
+        const contextoText = project.contextoText || '';
+        const queHice = project.queHice || [];
+        const tiposDesarrollos = project.tiposDesarrollos || [];
+
+        const bullets = (items) => items.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+
+        const html = `
+            <div class="content-section">
+                <h2 class="section-title">Proyecto</h2>
+                <div class="section-text">${escapeHtml(proyectoText)}</div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Contexto</h2>
+                <div class="section-text">${escapeHtml(contextoText)}</div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Qué hice</h2>
+                <ul class="bullet-list">
+                    ${bullets(queHice)}
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title">Tipos de Desarrollos</h2>
+                <ul class="bullet-list">
+                    ${bullets(tiposDesarrollos)}
+                </ul>
+            </div>
+            
+            ${project.detailImage ? `
+                <div class="project-detail-image-inline">
+                    <img src="${project.detailImage}" alt="${project.title} - detalle" loading="lazy">
+                </div>
+            ` : ''}
+        `;
+
+        contentDiv.innerHTML = html;
+        return;
+    }
     
     // Si el proyecto tiene estructura detallada (Pancha Revancha)
     if (project.objective) {

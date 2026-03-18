@@ -465,14 +465,14 @@ body {
 
 /* Projects Grid */
 .projects {
-    padding: var(--spacing-lg) 0 var(--spacing-xl);
+    padding: var(--spacing-md) 0 var(--spacing-xl);
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-md);
 }
 
 /* Project Card */
@@ -523,6 +523,14 @@ body {
     padding: var(--spacing-md);
 }
 
+.project-card-text {
+    min-width: 0;
+}
+
+.project-card-mockup {
+    display: none;
+}
+
 .project-card-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -545,6 +553,15 @@ body {
     opacity: 0.75;
     display: block;
     min-height: 2.5em;
+}
+
+.project-card-detail-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: var(--spacing-sm);
+    display: block;
 }
 
 /* Footer */
@@ -706,6 +723,25 @@ body {
     margin-bottom: 0;
 }
 
+/* Trabajos a medida (layout en 2 columnas) */
+.trabajos-columns {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+.trabajos-column-left,
+.trabajos-column-right {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .trabajos-columns {
+        flex-direction: column;
+    }
+}
+
 .bullet-list {
     list-style: none;
     padding-left: 0;
@@ -806,6 +842,32 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .project-card-content {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .project-card-mockup {
+        display: block;
+        width: 38%;
+        flex: 0 0 38%;
+    }
+
+    .project-card-mockup img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .project-card-detail-image {
+        height: 120px;
+        margin-top: var(--spacing-xs);
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
