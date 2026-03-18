@@ -46,8 +46,8 @@ function initRotatingWord() {
     const rotatingWord = document.getElementById('rotatingWord');
     if (!rotatingWord) return;
     
-    const phrases = ['productos digitales', 'software', 'pruebas de concepto', 'mvp', 'cosas'];
-    let currentIndex = -1; // Empezar en -1 para que la primera rotación muestre 'productos digitales'
+    const phrases = ['redes sociales', 'Reels UGC', 'Meta ads', 'Email marketing', 'tienda nube'];
+    let currentIndex = 0;
     
     function rotateWord() {
         rotatingWord.style.opacity = '0';
@@ -56,15 +56,12 @@ function initRotatingWord() {
             currentIndex = (currentIndex + 1) % phrases.length;
             rotatingWord.textContent = phrases[currentIndex];
             rotatingWord.style.opacity = '1';
-        }, 300); // Half of transition duration for smooth fade
+        }, 300);
     }
     
-    // Esperar 1.5 segundos antes de la primera rotación (para mostrar "cosas" inicialmente)
-    setTimeout(() => {
-        rotateWord();
-        // Luego rotar cada 1.5 segundos
-        setInterval(rotateWord, 1500);
-    }, 1500);
+    // Mostrar "redes sociales" al cargar; rotar cada 2 segundos
+    rotatingWord.textContent = phrases[0];
+    setInterval(rotateWord, 2000);
 }
 
 // Inicializar cuando el DOM esté listo

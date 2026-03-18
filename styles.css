@@ -470,9 +470,9 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 /* Project Card */
@@ -482,16 +482,19 @@ body {
     color: inherit;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: 20px;
     overflow: hidden;
-    transition: var(--transition);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
     cursor: pointer;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    border-color: var(--color-text);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.15);
 }
 
 .project-card-image {
@@ -517,14 +520,15 @@ body {
 }
 
 .project-card-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
 }
 
 .project-card-title {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: var(--spacing-xs);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .project-card-subtitle {
@@ -534,7 +538,7 @@ body {
 }
 
 .project-card-description {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--color-text);
     line-height: 1.6;
     margin-top: var(--spacing-sm);
@@ -818,4 +822,36 @@ body {
         display: none;
     }
 }
+
+@media (min-width: 1024px) {
+    .project-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        align-items: stretch;
+        min-height: 70vh;
+    }
+
+    .project-card-image {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .project-card-image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
+
+    .project-card-title {
+        font-size: 1.85rem;
+        letter-spacing: -0.03em;
+    }
+}
+
 
