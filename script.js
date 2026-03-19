@@ -48,7 +48,7 @@ function initRotatingWord() {
     const rotatingWord = document.getElementById('rotatingWord');
     if (!rotatingWord) return;
     
-    const phrases = ['redes sociales', 'Reels UGC', 'Meta ads', 'Email marketing', 'Tienda Nube', 'Diseño'];
+    const phrases = ['Redes sociales', 'Reels & UGC', 'Meta Ads', 'Email marketing', 'Tienda Nube', 'Diseño Grafico'];
     let currentIndex = 0;
     
     function rotateWord() {
